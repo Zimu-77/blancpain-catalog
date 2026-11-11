@@ -53,9 +53,9 @@ table.cmp img{width:142px;height:213px;object-fit:contain;background:#fff;border
 .filters .more.open{display:block}
 #moreBtn{white-space:nowrap}#moreBtn .arw{margin-left:6px;display:inline-block}
 @media(max-width:720px){.filters input,.filters select{max-width:100%}}
-.thumb{position:relative;cursor:pointer}.thumb .flip{position:absolute;right:6px;bottom:6px;font-size:10px;padding:2px 6px;border-radius:10px;background:rgba(20,24,33,.82);color:#c9a86a;border:1px solid #3a3a46;pointer-events:none}
+.thumb{position:relative;cursor:pointer}.thumb .mini{position:absolute;right:5px;bottom:5px;width:46px;height:auto;max-height:66px;object-fit:contain;background:#0b0d11;border:1px solid #4a4a58;border-radius:5px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,.55);pointer-events:none}
 </style></head><body><div class="wrap">
-<h1>宝珀 Blancpain 官网在售全系 <span style="font-size:12px;color:#c9a86a;border:1px solid #3a3a46;border-radius:6px;padding:3px 8px;vertical-align:middle;margin-left:8px">v13 · 344 款 · 可看背面</span></h1>
+<h1>宝珀 Blancpain 官网在售全系 <span style="font-size:12px;color:#c9a86a;border:1px solid #3a3a46;border-radius:6px;padding:3px 8px;vertical-align:middle;margin-left:8px">v14 · 344 款 · 右下角背面缩略图</span></h1>
 <p class="sub">中文官网（zh-hans）逐页抓取 <b>344 款</b>（332 在售 + 12 官网存档） · 系列 / 材质 / 尺寸 / 机芯 / 秒针 / 停秒 / 动力储备 / 价格 · 可横向对比 · 价格与 en-us 国际官网逐条一致（抽查 10/10 相符） <span style="margin-left:6px">家族档案：</span><a href="6651.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px;margin-left:2px">6651（15）</a> <a href="6654.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6654（23）</a> <a href="6106.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6106（12）</a> <a href="6224.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6224（14）</a></p>
 <div class="filters">
  <div class="frow"><span class="flabel">系列</span><div id="fColl" class="frow" style="margin:0"></div></div>
@@ -135,7 +135,7 @@ function list(){
  return a;
 }
 function grid(a){
- $('grid').innerHTML=a.map(d=>`<article class="card"><div class="thumb" data-front="img/${d.file}" data-back="${d.b?'img/back/'+d.file:''}" title="${d.b?'点击看背面':''}"><img loading="lazy" src="img/${d.file}" decoding="async" alt="${d.name}">${d.b?'<span class="flip">背面</span>':''}</div>
+ $('grid').innerHTML=a.map(d=>`<article class="card"><div class="thumb" data-front="img/${d.file}" data-back="${d.b?'img/back/'+d.file:''}" title="${d.b?'点击看背面':''}"><img loading="lazy" src="img/${d.file}" decoding="async" alt="${d.name}">${d.b?`<img class="mini" src="img/back/${d.file}" loading="lazy" alt="背面">`:""}</div>
  <div class="body"><div class="series">${d.coll}</div><div class="name">${d.name}</div><div class="ref">${d.ref}</div>
  <div class="tags">${d.status==='官网存档'?'<span class="tag" style="background:#2a2333;color:#b39ddb">存档</span>':''}${isN(d)?'<span class="tag" style="background:#3a2f1d;color:#e2c286">N 代</span>':''}<span class="tag">${d.mat}</span><span class="tag">${d.dia.toFixed(1)}mm</span><span class="tag">${d.mov}</span></div>
  <div class="price"><b>${fmtUSD(d.usd)}</b><span>${fmtCNY(d.usd)}</span></div>
