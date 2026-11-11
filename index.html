@@ -49,38 +49,46 @@ table.cmp img{width:142px;height:213px;object-fit:contain;background:#fff;border
 .note{margin-top:22px;color:var(--mut);font-size:11.5px;line-height:1.85;border-top:1px solid var(--bd);padding-top:12px}
 .empty{padding:40px;text-align:center;color:var(--mut)}
 @media (max-width:640px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}h1{font-size:19px}input#q{width:100%}}
+.filters .more{display:none;border-top:1px solid #262b36;margin-top:10px;padding-top:10px}
+.filters .more.open{display:block}
+#moreBtn{white-space:nowrap}#moreBtn .arw{margin-left:6px;display:inline-block}
+@media(max-width:720px){.filters input,.filters select{max-width:100%}}
 </style></head><body><div class="wrap">
-<h1>宝珀 Blancpain 官网在售全系 <span style="font-size:12px;color:#c9a86a;border:1px solid #3a3a46;border-radius:6px;padding:3px 8px;vertical-align:middle;margin-left:8px">v9 · 332 款 · 机芯/秒针/停秒/动力储备</span></h1>
-<p class="sub">中文官网（zh-hans）逐页抓取 <b>332 款</b> · 材质 / 尺寸 / 机芯 / 系列 / 价格筛选 · 可横向对比 · 价格与 en-us 国际官网逐条一致（抽查 10/10 相符） <span style="margin-left:6px">家族档案：</span><a href="6651.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px;margin-left:2px">6651（15）</a> <a href="6654.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6654（23）</a> <a href="6106.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6106（12）</a> <a href="6224.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6224（14）</a></p>
+<h1>宝珀 Blancpain 官网在售全系 <span style="font-size:12px;color:#c9a86a;border:1px solid #3a3a46;border-radius:6px;padding:3px 8px;vertical-align:middle;margin-left:8px">v10 · 332 款 · 折叠筛选</span></h1>
+<p class="sub">中文官网（zh-hans）逐页抓取 <b>332 款</b> · 系列 / 材质 / 尺寸 / 机芯 / 秒针 / 停秒 / 动力储备 / 价格 · 可横向对比 · 价格与 en-us 国际官网逐条一致（抽查 10/10 相符） <span style="margin-left:6px">家族档案：</span><a href="6651.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px;margin-left:2px">6651（15）</a> <a href="6654.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6654（23）</a> <a href="6106.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6106（12）</a> <a href="6224.html" style="color:#c9a86a;text-decoration:none;border:1px solid #3a3a46;border-radius:6px;padding:2px 8px">6224（14）</a></p>
 <div class="filters">
  <div class="frow"><span class="flabel">系列</span><div id="fColl" class="frow" style="margin:0"></div></div>
  <div class="frow"><span class="flabel">材质</span><div id="fMat" class="frow" style="margin:0"></div></div>
- <div class="frow"><span class="flabel">代际</span><div id="fGen" class="frow" style="margin:0">
-  <button class="chip on" data-g="all">全部</button>
-  <button class="chip" data-g="n">N 代（2025–26 新一代）</button>
-  <button class="chip" data-g="other">其它在售</button>
- </div></div>
-<div class="frow"><span class="flabel">机芯</span>
-  <select id="fMov"><option value="">全部机芯</option></select>
-</div>
-<div class="frow"><span class="flabel">秒针</span><div id="fSec" class="frow" style="margin:0">
-  <button class="chip on" data-s="all">全部</button>
-  <button class="chip" data-s="sweep">常规扫秒（327）</button>
-  <button class="chip" data-s="retro">逆跳秒（6653Q，5）</button>
-</div></div>
-<div class="frow"><span class="flabel">停秒</span><div id="fHack" class="frow" style="margin:0">
-  <button class="chip on" data-h="all">全部</button>
-  <button class="chip" data-h="yes">有停秒（1315，77）</button>
-  <button class="chip" data-h="no">无停秒（推断，95）</button>
-  <button class="chip" data-h="na">未知（160）</button>
-</div></div>
-<div class="frow">
-  <input id="q" placeholder="搜型号 / 名称，如 6651、Bathyscaphe">
+ <div class="frow">
+  <input id="q" placeholder="搜型号 / 名称 / 机芯，如 6651、Bathyscaphe、1315">
   <select id="fSize"><option value="all">全部尺寸</option><option value="s1">≤38mm</option><option value="s2">38–42mm</option><option value="s3">42–45mm</option><option value="s4">&gt;45mm</option></select>
-  <select id="fPrice"><option value="all">全部价格</option><option value="p1">≤2万美元</option><option value="p2">2–4万</option><option value="p3">4–10万</option><option value="p4">&gt;10万</option></select><select id="fPw"><option value="all">全部动力储备</option></select>
+  <select id="fPrice"><option value="all">全部价格</option><option value="p1">≤2万美元</option><option value="p2">2–4万</option><option value="p3">4–10万</option><option value="p4">&gt;10万</option></select>
   <select id="fSort"><option value="price-asc">价格 低→高</option><option value="price-desc">价格 高→低</option><option value="size-asc">尺寸 小→大</option><option value="size-desc">尺寸 大→小</option><option value="series">按系列</option></select>
+  <button class="btn" id="moreBtn">更多条件 <span id="moreN"></span><span class="arw">▾</span></button>
  </div>
- <div class="bar"><span>共 <b id="cnt">0</b> / 332 款</span>
+ <div id="more" class="more">
+  <div class="frow"><span class="flabel">代际</span><div id="fGen" class="frow" style="margin:0">
+   <button class="chip on" data-g="all">全部</button>
+   <button class="chip" data-g="n">N 代（2025–26 新一代）</button>
+   <button class="chip" data-g="other">其它在售</button>
+  </div></div>
+  <div class="frow"><span class="flabel">机芯</span>
+   <select id="fMov"><option value="">全部机芯</option></select>
+   <select id="fPw"><option value="all">全部动力储备</option></select>
+  </div>
+  <div class="frow"><span class="flabel">秒针</span><div id="fSec" class="frow" style="margin:0">
+   <button class="chip on" data-s="all">全部</button>
+   <button class="chip" data-s="sweep">常规扫秒（327）</button>
+   <button class="chip" data-s="retro">逆跳秒（6653Q，5）</button>
+  </div></div>
+  <div class="frow"><span class="flabel">停秒</span><div id="fHack" class="frow" style="margin:0">
+   <button class="chip on" data-h="all">全部</button>
+   <button class="chip" data-h="yes">有停秒（1315，77）</button>
+   <button class="chip" data-h="no">无停秒（推断，95）</button>
+   <button class="chip" data-h="na">未知（160）</button>
+  </div></div>
+ </div>
+<div class="bar"><span>共 <b id="cnt">0</b> / 332 款</span>
   <button class="btn" id="vGrid">▦ 网格</button><button class="btn" id="vCmp">⇄ 横向对比</button><button class="btn" id="reset">重置</button>
  </div>
 </div>
@@ -136,13 +144,15 @@ function cmp(a){
  t.innerHTML='<thead><tr><th style="position:sticky;left:0;background:#141419;z-index:4">项目</th>'+a.map(d=>`<th class="col">${d.ref}</th>`).join('')+'</tr></thead><tbody>'+
  rows.map(([l,f])=>`<tr><th>${l}</th>${a.map(d=>`<td class="col">${f(d)}</td>`).join('')}</tr>`).join('')+'</tbody>';
 }
+function advCount(){return [state.gen!=='all',!!state.mov,state.sec!=='all',state.hack!=='all',state.pw!=='all'].filter(Boolean).length}
+function syncMore(){const n=advCount();$('moreN').textContent=n?'('+n+')':'';if(n)$('more').classList.add('open');}
 function render(){
  let a=list(); const cap=12; let note='';
  if(state.view==='cmp'&&a.length>cap){note='（当前筛选 '+a.length+' 款，对比表最多显示前 '+cap+' 款；请用筛选缩小范围）';a=a.slice(0,cap)}
  $('cnt').textContent=list().length;
  $('grid').style.display=state.view==='grid'?'grid':'none';
  $('cmpwrap').style.display=state.view==='cmp'?'block':'none';
- $('vGrid').classList.toggle('on',state.view==='grid');$('vCmp').classList.toggle('on',state.view==='cmp');
+ $('vGrid').classList.toggle('on',state.view==='grid');$('vCmp').classList.toggle('on',state.view==='cmp');syncMore();
  $('hint').textContent=state.view==='cmp'?('横向对比：左右滑动；手机建议横屏，一屏 4–6 款 '+note):('共 '+list().length+' 款；切换「横向对比」可并排比较');
  if(!a.length){$('grid').innerHTML='<div class="empty">没有符合条件的结果</div>';$('cmp').innerHTML='';return}
  state.view==='grid'?grid(a):cmp(a);
@@ -156,9 +166,10 @@ document.querySelectorAll('#fHack .chip').forEach(b=>{b.onclick=()=>{state.hack=
 document.querySelectorAll('#fGen .chip').forEach(b=>{b.onclick=()=>{state.gen=b.dataset.g;document.querySelectorAll('#fGen .chip').forEach(x=>x.classList.toggle('on',x===b));render()}});
 $('fPrice').onchange=e=>{state.price=e.target.value;render()};
 $('fSort').onchange=e=>{state.sort=e.target.value;render()};
+$('moreBtn').onclick=()=>{const m=$('more');m.classList.toggle('open');$('moreBtn').querySelector('.arw').textContent=m.classList.contains('open')?'▴':'▾'};
 $('vGrid').onclick=()=>{state.view='grid';render()};
 $('vCmp').onclick=()=>{state.view='cmp';render()};
 $('reset').onclick=()=>{state.coll.clear();state.mat.clear();state.size='all';state.price='all';state.sort='price-asc';state.q='';state.gen='all';state.mov='';state.sec='all';state.hack='all';state.pw='all';$('q').value='';
- $('fSize').value='all';$('fPrice').value='all';$('fMov').value='';$('fPw').value='all';$('fSort').value='price-asc';document.querySelectorAll('#fColl .chip,#fMat .chip').forEach(c=>c.classList.remove('on'));document.querySelectorAll('#fGen .chip').forEach((c,i)=>c.classList.toggle('on',i===0));document.querySelectorAll('#fSec .chip').forEach((c,i)=>c.classList.toggle('on',i===0));document.querySelectorAll('#fHack .chip').forEach((c,i)=>c.classList.toggle('on',i===0));render()};
+ $('fSize').value='all';$('fPrice').value='all';$('fMov').value='';$('fPw').value='all';$('fSort').value='price-asc';document.querySelectorAll('#fColl .chip,#fMat .chip').forEach(c=>c.classList.remove('on'));document.querySelectorAll('#fGen .chip').forEach((c,i)=>c.classList.toggle('on',i===0));document.querySelectorAll('#fSec .chip').forEach((c,i)=>c.classList.toggle('on',i===0));document.querySelectorAll('#fHack .chip').forEach((c,i)=>c.classList.toggle('on',i===0));$('more').classList.remove('open');$('moreBtn').querySelector('.arw').textContent='▾';render()};
 chips();render();
 </script></body></html>
